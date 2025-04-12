@@ -1,0 +1,133 @@
+.container
+{
+  width: 50vw;
+  height: 30vw;
+  background-color: aqua;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  padding: 10px;
+}
+
+.overlay {
+  background-color: rgba(10, 55, 35, 0.3); /* Optional: adds transparency */
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Higher z-index to ensure it overlays other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header
+{
+  color: #0A3723;
+  font-size: 25px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.subheader
+{
+  color: #0A3723;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.subtitle
+{
+  color: #0A3723;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* text-align: center; */
+  width: 100%;
+}
+
+.notification
+{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.danger
+{
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.edit
+{
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  margin: auto;
+}
+
+.delete
+{
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout
+{
+  width: 100px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.personalInformation
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: end;
+  width: 30%;
+}
+
+.personalInformation div
+{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.personalInformation div input
+{
+  width: 170px;
+  height: 30px;
+}
+
+.information
+{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

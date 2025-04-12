@@ -1,7 +1,10 @@
 import Layout from "../../Layout";
 import styles from "./index.module.css";
+import Settings from "../../Components/Settings";
+import { useState } from "react";
 
 const Profile = () => {
+  const [active , setActive] = useState(false);
   return (
     <Layout>
       <div className={styles.container}>
@@ -15,7 +18,7 @@ const Profile = () => {
         <div className={styles.links}>
           <label>🛒 My Orders</label>
           <hr className={styles.divider} />
-          <label>⚙️ Settings</label>
+          <label onClick={() => setActive(!active)}>⚙️ Settings</label>
         </div>
 
         <p className={styles.ordersHeader}>Orders</p>
@@ -89,6 +92,8 @@ const Profile = () => {
             </div>
           </div>
         </div>
+
+        {active && <Settings active={setActive} />}
       </div>
     </Layout>
   );
