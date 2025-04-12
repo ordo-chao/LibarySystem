@@ -9,27 +9,54 @@
   text-decoration: none;
 }
 
-body
+.heading
 {
-  background-color: #F4F2EC;
+  color: #0A3723;
+  font-size: 25px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.heading
+.subtitle
 {
   color: #0A3723;
   font-size: 20px;
   margin: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.filters
+{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter
+{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  height: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.filterheader
+{
+  font-size: 12px;
 }
 
 .books
 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   padding: 10px;
   align-items: last baseline;
+  gap: 30px;
+  
 }
 
 .book
@@ -64,15 +91,5 @@ body
 {
   color: #0A3723;
   font-weight: bold;
-  font-size: 15px;
-}
-
-.viewmore
-{
-  color: #0A3723;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-  cursor: pointer;
   font-size: 15px;
 }

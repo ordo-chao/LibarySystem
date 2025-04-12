@@ -1,5 +1,6 @@
 import styles from './index.module.css'
 import Layout from '../../Layout'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -69,7 +70,7 @@ const Home = () => {
               <p>Pages: <span>400</span> </p>
             </div>
 
-            <p className={styles.viewmore}>View more >></p>
+            <Link to={'/trending'}><p className={styles.viewmore}>View more >></p></Link>
           </div>
         </div>
 

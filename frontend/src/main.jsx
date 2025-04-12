@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import pages
 
 import Homepage from './Screens/Home/index.jsx';
+import Trending from './Screens/Trending/index.jsx';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path='/trending' element={<Trending />} />
       </Routes>
     </BrowserRouter>
   );
