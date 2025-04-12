@@ -14,6 +14,7 @@ import Recommended from './User/Recommended/index.jsx';
 import Genre from './User/Genre/index.jsx';
 import Search from './User/Search/index.jsx';
 import About from './User/About/index.jsx';
+import Order from './User/Order/index.jsx';
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='/genre' element={<Genre />} />
         <Route path='/search' element={<Search />} />
         <Route path='/about' element={<About />} />
+        <Route path='/order' element={<Order />} />
       </Routes>
     </BrowserRouter>
   );
