@@ -5,13 +5,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
 
-import Homepage from './Screens/Home/index.jsx';
-import Trending from './Screens/Trending/index.jsx';
-import Foryou from './Screens/ForYou/index.jsx';
-import OnSale from './Screens/OnSale/index.jsx';
-import NewArrivals from './Screens/NewArrivals/index.jsx';
-import Recommended from './Screens/Recommended/index.jsx';
-import Genre from './Screens/Genre/index.jsx';
+import Homepage from './User/Home/index.jsx';
+import Trending from './User/Trending/index.jsx';
+import Foryou from './User/ForYou/index.jsx';
+import OnSale from './User/OnSale/index.jsx';
+import NewArrivals from './User/NewArrivals/index.jsx';
+import Recommended from './User/Recommended/index.jsx';
+import Genre from './User/Genre/index.jsx';
+import Search from './User/Search/index.jsx';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/newarrivals' element={<NewArrivals />} />
         <Route path='/recommended' element={<Recommended />} />
         <Route path='/genre' element={<Genre />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
     </BrowserRouter>
   );
