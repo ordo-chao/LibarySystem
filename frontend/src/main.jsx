@@ -11,7 +11,7 @@ import Foryou from './Screens/ForYou/index.jsx';
 import OnSale from './Screens/OnSale/index.jsx';
 import NewArrivals from './Screens/NewArrivals/index.jsx';
 import Recommended from './Screens/Recommended/index.jsx';
-
+import Genre from './Screens/Genre/index.jsx';
 
 const App = () => {
 
@@ -24,6 +24,7 @@ const App = () => {
         <Route path='/onsale' element={<OnSale />} />
         <Route path='/newarrivals' element={<NewArrivals />} />
         <Route path='/recommended' element={<Recommended />} />
+        <Route path='/genre' element={<Genre />} />
       </Routes>
     </BrowserRouter>
   );

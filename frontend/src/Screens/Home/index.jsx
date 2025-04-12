@@ -411,7 +411,7 @@ const Home = () => {
               <p>Pages: <span>400</span> </p>
             </div>
 
-            <p className={styles.viewmore}>View more >></p>
+            <Link to={'/genre'}><p className={styles.viewmore}>View more >></p></Link>
           </div>
         </div>
       </div>
