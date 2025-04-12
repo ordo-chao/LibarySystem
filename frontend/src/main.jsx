@@ -9,6 +9,8 @@ import Homepage from './Screens/Home/index.jsx';
 import Trending from './Screens/Trending/index.jsx';
 import Foryou from './Screens/ForYou/index.jsx';
 import OnSale from './Screens/OnSale/index.jsx';
+import NewArrivals from './Screens/NewArrivals/index.jsx';
+import Recommended from './Screens/Recommended/index.jsx';
 
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
         <Route path='/trending' element={<Trending />} />
         <Route path='/foryou' element={<Foryou />} />
         <Route path='/onsale' element={<OnSale />} />
+        <Route path='/newarrivals' element={<NewArrivals />} />
+        <Route path='/recommended' element={<Recommended />} />
       </Routes>
     </BrowserRouter>
   );
