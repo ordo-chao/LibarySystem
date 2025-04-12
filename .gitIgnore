@@ -1,0 +1,18 @@
+# Root
+.env
+*.log
+
+# Node.js backend
+backend/node_modules/
+backend/.env
+
+# React frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VSCode settings (optional)
+.vscode/
