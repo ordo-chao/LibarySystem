@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './Screens/Home/index.jsx';
 import Trending from './Screens/Trending/index.jsx';
 import Foryou from './Screens/ForYou/index.jsx';
+import OnSale from './Screens/OnSale/index.jsx';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path='/trending' element={<Trending />} />
         <Route path='/foryou' element={<Foryou />} />
+        <Route path='/onsale' element={<OnSale />} />
       </Routes>
     </BrowserRouter>
   );
