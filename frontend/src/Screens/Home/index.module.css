@@ -1,0 +1,73 @@
+.container
+{
+  width: 90%;
+  margin: auto;
+}
+
+body
+{
+  background-color: #F4F2EC;
+}
+
+.heading
+{
+  color: #0A3723;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.books
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: last baseline;
+}
+
+.book
+{
+  width: 200px;
+  border: 1px solid #0A3723;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.image
+{
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.book p
+{
+  margin: 0px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.book p span
+{
+  color: #0A3723;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.viewmore
+{
+  color: #0A3723;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
