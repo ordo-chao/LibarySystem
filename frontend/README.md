@@ -1,12 +1,29 @@
-# React + Vite
+# 📚 BookiFy Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookiFy is a modern online bookshop platform built with **React.js**, offering users a sleek interface to browse, preview, and purchase books. This is the frontend portion of the system.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 **Search & Filter** books by title, author, category, or tags
+- 📈 **Trending Books**, **New Arrivals**, **Recommended Reads**
+- 🎯 Personalized sections: _Books for You_, _On Sale_
+- 📖 Read **up to 10 preview pages** of any book
+- 🛒 Cart and **Order Summary**
+- 📝 Reviews & Ratings system
+- 💼 Profile, Wishlist & Settings pages
+- 📦 Inventory-driven UI with real-time stock updates
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **React.js** – Frontend Framework
+- **React Router DOM** – Client-side Routing
+- **CSS Modules** – Component-specific styling
+- **Fetch** – HTTP requests
+- **Context API** – State Management
+
+---
+
+## 📂 Project Structure
+
