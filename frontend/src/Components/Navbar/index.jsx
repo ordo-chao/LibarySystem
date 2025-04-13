@@ -13,8 +13,9 @@ function Navbar() {
       <div className={styles.links}>
         <Link to="/" style={path === '/' || path === '/trending' || path === '/foryou' || path === '/onsale' || path === '/newarrivals' || path === '/recommended' || path === '/genre' ? { color: '#FF6D00' } : { color: '#0A3723' }}>Home</Link>
         <Link to="/search" style={path === '/search' ? { color: '#FF6D00' } : { color: '#0A3723' }}>Search</Link>
-        <Link to="/about" style={path === '/about' ? { color: '#FF6D00' } : { color: '#0A3723' }}>About us</Link>
         <Link to="/order" style={path === '/order' ? { color: '#FF6D00' } : { color: '#0A3723' }}>Order</Link>
+        <Link to="/about" style={path === '/about' ? { color: '#FF6D00' } : { color: '#0A3723' }}>About us</Link>
+        <Link to="/contact" style={path === '/contact' ? { color: '#FF6D00' } : { color: '#0A3723' }}>Contact Us</Link>
         <Link to="/profile" style={path === '/profile' ? { color: '#FF6D00' } : { color: '#0A3723' }}>Profile</Link>
       </div>
 

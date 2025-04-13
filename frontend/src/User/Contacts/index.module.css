@@ -1,0 +1,125 @@
+.title
+{
+  font-size: 64px;
+  color: #0A3723;
+  font-family: 'Lato';
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.contactsform
+{
+  background-color: white;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 750px;
+  padding: 50px;
+  display: flex;
+  border-radius: 20px;
+}
+
+.contactInfo
+{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subheader
+{
+  font-size: 36px;
+  color: #0A3723;
+  font-weight: bold;
+}
+
+.description
+{
+  width: 60%;
+  font-size: 20px;
+  color: #0A3723;
+}
+
+.contact
+{
+  display: flex;
+  gap: 40px;
+  font-size: 24px;
+  color: #0A3723;
+  align-items: center;
+  
+}
+
+.contact a
+{
+  text-decoration: none;
+  color: #0A3723;
+}
+
+.sendInformation
+{
+  width: 50%;
+}
+
+.form
+{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.name
+{
+  display: flex;
+  gap: 20px;
+  width: 83%;
+}
+
+.inputName
+{
+  width: 50%;
+  height: 50px;
+  font-size: 24px;
+  font-family: 'Lato';
+  border-radius: 10px;
+  border: 1px solid rgba(10, 55, 35, 0.39);
+  padding-left: 20px;
+}
+
+.input
+{
+  width: 80%;
+  height: 50px;
+  font-size: 24px;
+  font-family: 'Lato';
+  border-radius: 10px;
+  border: 1px solid rgba(10, 55, 35, 0.39);
+  padding-left: 20px;
+}
+
+.textarea
+{
+  width: 80%;
+  height: 200px;
+  font-size: 24px;
+  font-family: 'Lato';
+  border-radius: 10px;
+  border: 1px solid rgba(10, 55, 35, 0.39);
+  padding-left: 20px;
+}
+
+.submit
+{
+  width: 272px;
+  height: 52px;
+  background-color: #FF6D00;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+}

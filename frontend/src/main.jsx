@@ -16,6 +16,7 @@ import Search from './User/Search/index.jsx';
 import About from './User/About/index.jsx';
 import Order from './User/Order/index.jsx';
 import Profile from './User/Profile/index.jsx';
+import Contacts from './User/Contacts/index.jsx';
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/order' element={<Order />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/contact' element={<Contacts />} />
       </Routes>
     </BrowserRouter>
   );
