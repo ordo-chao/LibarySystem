@@ -1,8 +1,11 @@
 import styles from './index.module.css'
 import Layout from '../../Layout'
 import { Link } from 'react-router-dom'
+import Book from '../../Components/Book'
+import { useState } from 'react'
 
 const Home = () => {
+  const [active , setActive] = useState(false)
   return (
     <Layout>
       <div className={styles.container}>
@@ -10,7 +13,7 @@ const Home = () => {
         <div className={styles.trending}>
           <h1 className={styles.heading}>Trending books 🔥</h1>
           <div className={styles.books}>
-            <div className={styles.book}>
+            <div className={styles.book} onClick={() => setActive(true)}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
               <p>Book: <span>48 Laws of Power</span> </p>
               <p>Author: <span>Robert Greene</span></p>
@@ -414,6 +417,7 @@ const Home = () => {
             <Link to={'/genre'}><p className={styles.viewmore}>View more >></p></Link>
           </div>
         </div>
+        {active && <Book active={setActive}/>}
       </div>
     </Layout>
   )

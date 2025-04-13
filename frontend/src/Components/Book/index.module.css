@@ -1,0 +1,129 @@
+.container
+{
+  width: 60vw;
+  height:45vw;
+  background-color: #F4F2EC;
+  position: fixed;
+  top: 5%;
+  left: 20%;
+  padding: 10px;
+  overflow: auto;
+}
+
+.overlay {
+  background-color: rgba(10, 55, 35, 0.2); /* Optional: adds transparency */
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Higher z-index to ensure it overlays other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove
+{
+  text-align: end;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.img
+{
+  height: 500px;
+}
+
+.book
+{
+  display: flex;
+  gap: 30px;
+}
+
+.details
+{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.details p
+{
+  margin: 0px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.details p span
+{
+  color: #0A3723;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.header
+{
+  text-align: center;
+  color: #0A3723;
+}
+
+.reviews
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  width: 95%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.review h2
+{
+  margin: 0;
+  color: #0A3723;
+  font-size: 20px;
+}
+
+.review p
+{
+  margin: 0;
+}
+
+.rate
+{
+  text-align: end;
+}
+
+.links
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+  margin-top: 40px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.links label
+{
+  cursor: pointer;
+}
+
+.divider
+{
+  height: 100%;
+  width: 1px;
+  background-color: #0A3723;
+}
