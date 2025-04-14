@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const wishlistSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
   books: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Book',
+    ref: "Book",
   }],
   createdAt: {
     type: Date,

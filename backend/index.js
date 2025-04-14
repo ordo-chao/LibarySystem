@@ -7,6 +7,7 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
+
 // Middleware
 app.use(cors());
 app.use(express.json())
@@ -19,6 +20,8 @@ const orderRouter = require('./routes/order.route');
 const contactRouter = require('./routes/contact.route');
 const profileRouter = require('./routes/profile.route');
 const bookRouter = require('./routes/books.route');
+const wishlistRouter = require('./routes/wishlist.route');
+const authRouter = require('./routes/auth.route');
 
 // User Routes
 app.use('/login', loginRouter);
@@ -28,7 +31,8 @@ app.use('/order', orderRouter);
 app.use('/contact', contactRouter);
 app.use('/profile', profileRouter);
 app.use('/book', bookRouter);
-
+app.use('/wishlist' , wishlistRouter);
+app.use('/auth' , authRouter)
 
 
 const PORT = process.env.PORT || 5000;
