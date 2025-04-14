@@ -16,3 +16,7 @@ Thumbs.db
 
 # VSCode settings (optional)
 .vscode/
+
+
+node_modules
+.env
