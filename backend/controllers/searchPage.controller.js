@@ -1,56 +1,33 @@
 const bookSchema = require("../Models/book.model");
 const filterController = async (req, res) => {
-  console.log(req.body.timeFrame);
-
-  if(req.body.timeFrame){
-    const timeFrame = req.body.timeFrame;
-    const books = await bookSchema.find({ timeFrame: timeFrame });
-    if(req.body.genre)
-      {
-        books = books.filter(book => book.genre === req.body.genre);
-      }
-    if(req.body.price)
-      {
-        if(req.body.price < 500)
-          {
-            books = books.filter(book => book.price < 500);
-          }
-        else if(req.body.price < 1000)
-          {
-            books = books.filter(book => book.price < 1000);
-          }
-        else
-          {
-            books = books.filter(book => book.price > 1000);
-          }
-      }
-    if(req.body.rating)
-      {
-        if(req.body.rating < 1)
-          {
-            books = books.filter(book => book.rating < 1);
-          }
-        else if(req.body.rating < 2)
-          {
-            books = books.filter(book => book.rating < 2);
-          }
-        else if(req.body.rating < 3)
-          {
-            books = books.filter(book => book.rating < 3);
-          }
-        else if(req.body.rating < 4)
-          {
-            books = books.filter(book => book.rating < 4);
-          }
-        else
-          {
-            books = books.filter(book => book.rating > 4);
-          }
-      }
-    res.status(200).json(books);
+  const query = {};
+  if (req.body.genre) query.genre = req.body.genre;
+  if (req.body.price) {
+    if (req.body.price < 500) {
+      query.price = { $lt: 500 };
+    } else if (req.body.price < 1000) {
+      query.price = { $lt: 1000 };
+    } else {
+      query.price = { $gt: 1000 };
+    }
   }
-  res.send("Search logic will go here.");
-};
+  if (req.body.rating) {
+    if (req.body.rating < 1) {
+      query.ratingsAverage = { $lt: 1 };
+    } else if (req.body.rating < 2) {
+      query.ratingsAverage = { $lt: 2 };
+    } else if (req.body.rating < 3) {
+      query.ratingsAverage = { $lt: 3 };
+    } else if (req.body.rating < 4) {
+      query.ratingsAverage = { $lt: 4 };
+    } else {
+      query.ratingsAverage = { $gt: 4 };
+    }
+  }
+  
+  const books = await bookSchema.find(query);
+    res.status(200).json(books);
+  };
 
 const searchController = async (req, res) => {
   const query = {};

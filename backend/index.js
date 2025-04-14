@@ -16,15 +16,19 @@ const  loginRouter = require('./routes/login.route');
 const homepageRouter = require('./routes/homePage.route');
 const searchRouter = require('./routes/search.route');
 const orderRouter = require('./routes/order.route');
+const contactRouter = require('./routes/contact.route');
+const profileRouter = require('./routes/profile.route');
+const bookRouter = require('./routes/books.route');
 
 // User Routes
 app.use('/login', loginRouter);
 app.use('/', homepageRouter);
 app.use('/search', searchRouter);
 app.use('/order', orderRouter);
+app.use('/contact', contactRouter);
+app.use('/profile', profileRouter);
+app.use('/book', bookRouter);
 
-
-// Admin Routes
 
 
 const PORT = process.env.PORT || 5000;
