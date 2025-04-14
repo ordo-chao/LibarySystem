@@ -31,13 +31,19 @@ const filterController = async (req, res) => {
 
 const searchController = async (req, res) => {
   const query = {};
-  if (req.body.title) query.title = req.body.title;
-  if (req.body.author) query.author = req.body.author;
-  if (req.body.isbn) query.isbn = req.body.isbn;
+
+  if (req.body.search) {
+    const search = req.body.search;
+    query.$or = [
+      { title: { $regex: search, $options: 'i' } },   // case-insensitive
+      { author: { $regex: search, $options: 'i' } },
+      { isbn: { $regex: search, $options: 'i' } }
+    ];
+  }
   
   const books = await bookSchema.find(query);
-
-  res.status(200).json(books);  
+  res.status(200).json(books);
+  
 };
 
 module.exports = {
