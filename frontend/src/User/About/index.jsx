@@ -36,44 +36,44 @@ const About = () => {
         <div className={styles.member}>
           <img src="/Images/Rodney.jpeg" alt="Rodney Luguyesi" className={styles.memberimg} />
           <p className={styles.subheader}>Rodney Mwanje Luguyesi </p>
-          <p className={styles.membertitle}>Backend and Hardware Engineer </p>
+          {/* <p className={styles.membertitle}>Backend and Hardware Engineer </p>
           <p className={styles.description}>A
             backend and hardware developer with 3+ years of experience, ensuring seamless
-            functionality and performance.</p>
+            functionality and performance.</p> */}
         </div>
 
         <div className={styles.member}>
           <img src="/Images/Dan.jpeg" alt="Dan Masi" className={styles.memberimg} />
           <p className={styles.subheader}> Daniel Masi</p>
-          <p className={styles.membertitle}>Business Strategist and Project Manager</p>
+          {/* <p className={styles.membertitle}>Business Strategist and Project Manager</p>
           <p className={styles.description}>Brings 2+
             years of experience in strategy and project execution, guiding software projects from
-            ideation to completion.</p>
+            ideation to completion.</p> */}
         </div>
 
         <div className={styles.member}>
           <img src="/Images/Jess.jpeg" alt="Jessica Nzembi Gatura" className={styles.memberimg} />
           <p className={styles.subheader}> Jessica Nzembi Gatura</p>
-          <p className={styles.membertitle}>Mobile Application Engineer</p>
+          {/* <p className={styles.membertitle}>Mobile Application Engineer</p>
           <p className={styles.description}>A mobile
             developer with 3+ years of experience, optimizing Daystar Academia apps for
-            performance and usability.</p>
+            performance and usability.</p> */}
         </div>
 
         <div className={styles.member}>
           <img src="/Images/Maycy.jpeg" alt="Maycy Nolari" className={styles.memberimg} />
           <p className={styles.subheader}> Maycy Nolari</p>
-          <p className={styles.membertitle}>UI UX and Graphics Designer</p>
+          {/* <p className={styles.membertitle}>UI UX and Graphics Designer</p>
           <p className={styles.description}>A UI/UX expert with 3+
-            years of experience, creating intuitive and visually engaging interfaces.</p>
+            years of experience, creating intuitive and visually engaging interfaces.</p> */}
         </div>
 
         <div className={styles.member}>
           <img src="/Images/Prince.png" alt="Prince Benedict" className={styles.memberimg} />
           <p className={styles.subheader}>Prince Benedict</p>
-          <p className={styles.membertitle}>Web Applications Engineer</p>
+          {/* <p className={styles.membertitle}>Web Applications Engineer</p>
           <p className={styles.description}>A web developer with 2+
-            years of experience, building high-performance and scalable applications.</p>
+            years of experience, building high-performance and scalable applications.</p> */}
         </div>
 
       </div>

@@ -93,3 +93,17 @@
   font-weight: bold;
   font-size: 15px;
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; /* 👈 crucial for ellipsis to work */
+}
+
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}

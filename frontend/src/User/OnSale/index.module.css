@@ -4,6 +4,13 @@
   margin: auto;
 }
 
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 .container a
 {
   text-decoration: none;
@@ -103,4 +110,11 @@
   cursor: pointer;
   color: #0A3723;
   font-weight: bold;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; /* 👈 crucial for ellipsis to work */
 }

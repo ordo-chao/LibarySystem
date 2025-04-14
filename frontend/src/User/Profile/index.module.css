@@ -12,7 +12,12 @@
   margin: auto;
   margin-bottom: 20px;
 }
-
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
 .username
 {
   color: #0A3723;

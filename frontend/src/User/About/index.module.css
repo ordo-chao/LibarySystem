@@ -5,6 +5,13 @@
   margin-top: 100px;
 }
 
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 .header p
 {
   width: 850px;

@@ -9,6 +9,13 @@
   width: 100%;
 }
 
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 .container
 {
   display: flex;

@@ -4,6 +4,13 @@
   margin: auto;
 }
 
+.loader
+{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 .container a
 {
   text-decoration: none;

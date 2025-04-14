@@ -33,11 +33,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id} onClick={() => {setActive(true) ; setId(book._id)}}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )})}
 
@@ -53,11 +53,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )})}
 
@@ -73,11 +73,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.discountPrice} ~ KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )
           })}
@@ -93,11 +93,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )})}
 
@@ -113,11 +113,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )})}
 
@@ -134,11 +134,11 @@ const Home = () => {
             return (
               <div className={styles.book} key={book._id}>
               <img src="src/assets/example.jpeg" alt="" className={styles.image} />
-              <p>Book: <span>48 Laws of Power</span> </p>
-              <p>Author: <span>Robert Greene</span></p>
-              <p>Price: <span>$10</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
+              <p>Author: <span>{data && book.author }</span></p>
+              <p>Price: <span>KES {data && book.price}</span></p>
+              <p>Rating: <span>{data && book.ratingsAverage }</span></p>
+              <p>Pages: <span>{data && book.pages}</span> </p>
             </div>
           )})}
 
