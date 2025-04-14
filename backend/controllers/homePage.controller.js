@@ -19,7 +19,7 @@ const GuestController = async (req, res) => {
 
 const UserPageController = async (req, res) => {
   console.log(req.body)
-  const trending = await bookSchema.find({ isTrending: true }).limit(7);
+    const trending = await bookSchema.find({ isTrending: true }).limit(7);
   const booksforyou = await bookSchema.find({ booksforyou: true }).limit(7);
   const discounted = await bookSchema.find({ discountPrice: {$gt: 0} }).limit(7);
   const arrivals = await bookSchema.find({ isArrival: true }).limit(7);

@@ -19,4 +19,43 @@ const getBook = async (req, res) => {
   }
 };
 
-module.exports = { createBook , getBook };
+const getTrending = async (req, res) => {
+  try {
+    const books = await bookSchema.find({isTrending : true});
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const getonSale = async (req, res) => {
+  try {
+    const books = await bookSchema.find({isNewArrival : true});
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const getRecommended = async (req, res) => {
+  try {
+    const books = await bookSchema.find({isRecommended : true});
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  } 
+};
+
+const getGenre =  async (req , res) =>
+  {
+    try {
+      const books = await bookSchema.find({genre : req.body.genre});
+      res.status(200).json(books);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+
+
+
+module.exports = { createBook , getBook , getTrending , getonSale , getRecommended , getGenre };
