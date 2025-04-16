@@ -1,7 +1,49 @@
 import Layout from "../../Layout";
 import styles from "./index.module.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Order = () => {
+  const [money , setMoney] = useState(100)
+  const [email , setEmail] = useState('')
+  const navigate = useNavigate()
+  // console.log(email)
+    const payWithPaystack = (email) => {
+      console.log(email)
+      const handler = window.PaystackPop.setup({
+        key: 'pk_test_68544722f234967bddfa7e64b6b0cb5fde5a9c1a', // Replace with your Paystack test public key
+        email: email,
+        amount: money * 10, // Amount in Kobo (KES 100 = 10000)
+        currency: 'KES', // You can use 'KES', 'NGN', etc.
+        ref: 'ref_' + Math.floor(Math.random() * 1000000000 + 1),
+        callback:  function (response) {
+          alert('Payment complete! Reference: ' + response.reference);
+          // Send to backend for verification (optional)
+          fetch('http://localhost:5000/verify', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ reference: response.reference }),
+          })
+            .then((verify) => verify.json())
+            .then((data) => {
+              console.log("Verification response:", data.status);
+              if(data.status === "success")
+                {
+                    navigate('/')
+                }
+            })
+            .catch((error) => {
+              console.error("Error verifying:", error);
+            });
+        },
+        onClose: function () {
+          alert('Payment cancelled');
+        },
+      });
+      handler.openIframe();
+    };
   return (
     <Layout>
       <div className={styles.container}>
@@ -15,8 +57,8 @@ const Order = () => {
               <input type="text" id="name" name="Full Name" />
             </div>
             <div>
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="Email" />
+              <label htmlFor="email" >Email:</label>
+              <input type="email" id="email" name="Email" onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div>
               <label htmlFor="phone">Phone:</label>
@@ -108,11 +150,12 @@ const Order = () => {
             <label>I confirm my order and delivery details</label>
           </div>
         </div>
-        <button type="submit" className={styles.placeOrder} >Place Order</button>
+        <button  className={`pay-btn ${styles.placeOrder}`} onClick={() => payWithPaystack(email)} >Place Order</button>
        </div>
       </div>
     </Layout>
   );
-};
+}
+
 
 export default Order;
