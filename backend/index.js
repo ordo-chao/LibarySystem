@@ -22,6 +22,7 @@ const profileRouter = require('./routes/profile.route');
 const bookRouter = require('./routes/books.route');
 const wishlistRouter = require('./routes/wishlist.route');
 const authRouter = require('./routes/auth.route');
+const verify = require('./routes/verify.route');
 
 // User Routes
 app.use('/login', loginRouter);
@@ -33,6 +34,7 @@ app.use('/profile', profileRouter);
 app.use('/book', bookRouter);
 app.use('/wishlist' , wishlistRouter);
 app.use('/auth' , authRouter)
+app.use('/verify' , verify)
 
 
 const PORT = process.env.PORT || 5000;
