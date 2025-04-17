@@ -40,12 +40,10 @@ const bookSchema = new mongoose.Schema(
     },
     description: {
       type: String,
+      required: true,
     },
     coverImage: {
       type: String, // Path or URL
-    },
-    pdf: {
-      type: String, // Path or URL to the actual PDF file
     },
     samplePages: {
       type: Number,
@@ -53,6 +51,7 @@ const bookSchema = new mongoose.Schema(
     },
     pages: {
       type: Number,
+      // required: true,
     },
     price: {
       type: Number,
@@ -70,9 +69,11 @@ const bookSchema = new mongoose.Schema(
     },
     publisher: {
       type: String,
+      required: true,
     },
     publishedDate: {
       type: Date,
+      required: true,
     },
     language: {
       type: String,
@@ -119,6 +120,9 @@ const bookSchema = new mongoose.Schema(
     addedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+    },
+    pdfUrl: {
+      type: String, // Path or URL to the actual PDF file
     },
   },
   { timestamps: true }

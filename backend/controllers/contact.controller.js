@@ -19,8 +19,8 @@ const ContactController = async (req, res) => {
     const contact = await contactSchema.create(req.body);
 
     const mailOptions = {
-      from: "princeben9312@gmail.com",
-      to: req.body.email,
+      from: req.body.email,
+      to: "princeben9312@gmail.com",
       subject: req.body.subject,
       text: req.body.message,
     }
