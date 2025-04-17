@@ -190,7 +190,7 @@ const Search = () => {
           {data && data.map(book => {
             return (
               <div className={styles.book} key={book._id} onClick={() => { setActive(true); setId(book._id) }}>
-                <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+                <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
                 <p>Book: <span>{book.title}</span> </p>
                 <p>Author: <span>{book.author}</span></p>
                 <p>ISBN: <span>{book.isbn}</span></p>

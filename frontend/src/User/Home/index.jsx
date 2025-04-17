@@ -8,17 +8,18 @@ import ClipLoader from "react-spinners/ClipLoader";
 const Home = () => {
   const [active , setActive] = useState(false)
   const serverIp = 'http://localhost:5000'
-  const [data , setData] = useState()
+  const [data , setdata] = useState()
   const [loader , setLoader] = useState(false)
   const [id , setId] = useState("")
 
   useEffect(() => {
-    FetchData()
+    Fetchdata()
   }, [])
-  function FetchData()
+  function Fetchdata()
   {
     setLoader(true)
-    fetch(`${serverIp}/guest`).then(res => res.json()).then(data => setData(data))
+    fetch(`${serverIp}/guest`).then(res => res.json()).then(data => {setdata(data); console.log(data)})
+    
     setLoader(false)
   }
   return (
@@ -32,7 +33,7 @@ const Home = () => {
           {data && data.trending.map(book => {
             return (
               <div className={styles.book} key={book._id} onClick={() => {setActive(true) ; setId(book._id)}}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.price}</span></p>
@@ -52,7 +53,7 @@ const Home = () => {
           {data && data.booksforyou.map(book => {
             return (
               <div className={styles.book} key={book._id}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.price}</span></p>
@@ -72,7 +73,7 @@ const Home = () => {
           {data && data.discounted.map(book => {
             return (
               <div className={styles.book} key={book._id}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.discountPrice} ~ KES {data && book.price}</span></p>
@@ -92,7 +93,7 @@ const Home = () => {
           {data && data.arrivals.map(book => {
             return (
               <div className={styles.book} key={book._id}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.price}</span></p>
@@ -112,7 +113,7 @@ const Home = () => {
           {data && data.recommended.map(book => {
             return (
               <div className={styles.book} key={book._id}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.price}</span></p>
@@ -133,7 +134,7 @@ const Home = () => {
           {data && data.genre.map(book => {
             return (
               <div className={styles.book} key={book._id}>
-              <img src="src/assets/example.jpeg" alt="" className={styles.image} />
+              <img src={`${serverIp}/${data && book.coverImage}`} alt="" className={styles.image} />
               <p>Book: <span className={styles.truncate} style={{width: '90%'}} >{data && book.title}</span> </p>
               <p>Author: <span>{data && book.author }</span></p>
               <p>Price: <span>KES {data && book.price}</span></p>

@@ -12,13 +12,13 @@ const Book = (props) => {
   }, [])
   function FetchData() {
     setLoader(true)
-    fetch(`${serverIp}/book/getBook` , 
+    fetch(`${serverIp}/book/getBook`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({id: props.id})
+        body: JSON.stringify({ id: props.id })
       }).then(res => res.json()).then(data => setData(data))
     setLoader(false)
   }
@@ -28,15 +28,16 @@ const Book = (props) => {
         <div className={styles.container}>
           <p className={styles.remove} onClick={() => props.active(false)}>❌</p>
           <div className={styles.book}>
-            <img src="src/assets/example.jpeg" alt="" className={styles.img} />
+            <img src={`${serverIp}/${Data && Data.coverImage}`} alt="" className={styles.img} />
             <div className={styles.details}>
-              <p>Title: <span></span>{Data && Data.title} </p>
+              <h1 className={styles.title}>{Data && Data.title} </h1>
               <p>Author: <span>{Data && Data.author}</span></p>
               <p>Publisher: <span>{Data && Data.publisher}</span></p>
               <p>Published: <span>{Data && Data.publishedDate}</span></p>
               <p>Genre: <span>{Data && Data.genre}</span></p>
               <p>Price: <span>{Data && Data.price}</span> </p>
-              <p>Available: <span>{Data && Data.stock}</span></p>
+              <p>Rating:{" "}<span>{"⭐".repeat(Math.floor(Data?.ratingsAverage || 0))}{"☆".repeat(5 - Math.floor(Data?.ratingsAverage || 0))}</span></p>
+              <p>Available Stock: <span>{Data && Data.stock}</span></p>
               {/* <br/> */}
               <p>Description: <span>{Data && Data.description}</span></p>
             </div>
