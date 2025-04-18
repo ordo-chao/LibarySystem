@@ -4,6 +4,7 @@ import Settings from "../../Components/Settings";
 import { useState, useEffect } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 
+
 const Profile = () => {
   const [active, setActive] = useState(false);
   const serverIp = 'http://localhost:5000'

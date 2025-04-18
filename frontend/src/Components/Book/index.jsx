@@ -2,11 +2,18 @@ import styles from "./index.module.css"
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
+import { useContext } from "react";
+import { LoginContext } from "../../loginContext";
 
 const Book = (props) => {
   const serverIp = 'http://localhost:5000'
   const [Data, setData] = useState()
   const [loader, setLoader] = useState(false)
+  const { cart , setCart } = useContext(LoginContext)
+  function AddToCart(Data) {
+    localStorage.setItem("cart", JSON.stringify([...cart, Data]));
+    setCart([...cart, Data])
+  }
   useEffect(() => {
     FetchData()
   }, [])
@@ -28,7 +35,7 @@ const Book = (props) => {
         <div className={styles.container}>
           <p className={styles.remove} onClick={() => props.active(false)}>❌</p>
           <div className={styles.book}>
-            <img src={`${serverIp}/${Data && Data.coverImage}`} alt="" className={styles.img} />
+            <iframe src={`${serverIp}/${Data && Data.pdfUrl}`} frameBorder="0" allowFullScreen width={"100%"} height={"500px"} />
             <div className={styles.details}>
               <h1 className={styles.title}>{Data && Data.title} </h1>
               <p>Author: <span>{Data && Data.author}</span></p>
@@ -45,7 +52,7 @@ const Book = (props) => {
           <div className={styles.links}>
             <label>❤️ Add to Wishlist</label>
             <hr className={styles.divider} />
-            <label>🛒 Add to Cart</label>
+            <label onClick={() => AddToCart(Data)}>🛒 Add to Cart</label>
           </div>
           <hr />
           <h2 className={styles.header}>📣 Reviews  </h2>

@@ -1,7 +1,8 @@
 import { StrictMode} from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { LoginContext } from "/src/loginContext.jsx";
+import { useState } from "react";
 
 // import pages
 
@@ -19,8 +20,13 @@ import Profile from './User/Profile/index.jsx';
 import Contacts from './User/Contacts/index.jsx';
 
 const App = () => {
-
+  // Get data from local storage
+  const Shopingcart = JSON.parse(localStorage.getItem("cart"));
+  const [cart, setCart] = useState(Shopingcart || []);
   return (
+    <LoginContext.Provider value={{
+      cart,setCart
+    }}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -37,6 +43,7 @@ const App = () => {
         <Route path='/contact' element={<Contacts />} />
       </Routes>
     </BrowserRouter>
+    </LoginContext.Provider>
   );
 };
 

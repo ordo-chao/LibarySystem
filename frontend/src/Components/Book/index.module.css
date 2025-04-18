@@ -1,6 +1,6 @@
 .container
 {
-  width: 40vw;
+  width: 50vw;
   height:45vw;
   background-color: #F4F2EC;
   position: fixed;
@@ -32,15 +32,16 @@
 
 .img
 {
-  height: 400px;
-  width: 250px;
-  object-fit: cover;
+  height: 600px;
+  width: 450px;
+  /* object-fit: cover; */
 }
 
 .book
 {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .title

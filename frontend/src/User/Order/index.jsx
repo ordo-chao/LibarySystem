@@ -2,18 +2,34 @@ import Layout from "../../Layout";
 import styles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { LoginContext } from "/src/loginContext.jsx";
 
 const Order = () => {
-  const [money , setMoney] = useState(100)
+  let Shipping = 0
+  let subtotal = 0
+
   const [email , setEmail] = useState('')
   const navigate = useNavigate()
+  const {cart , setCart} = useContext(LoginContext)
+    const serverIp = 'http://localhost:5000'
+  function getPrice()
+  {
+    let price = 0
+    cart.forEach(element => {
+      price += element.price
+      Shipping += 100
+      subtotal += element.price
+    });
+    return price
+  }
   // console.log(email)
     const payWithPaystack = (email) => {
       console.log(email)
       const handler = window.PaystackPop.setup({
         key: 'pk_test_68544722f234967bddfa7e64b6b0cb5fde5a9c1a', // Replace with your Paystack test public key
         email: email,
-        amount: money * 10, // Amount in Kobo (KES 100 = 10000)
+        amount: getPrice() * 10, // Amount in Kobo (KES 100 = 10000)
         currency: 'KES', // You can use 'KES', 'NGN', etc.
         ref: 'ref_' + Math.floor(Math.random() * 1000000000 + 1),
         callback:  function (response) {
@@ -85,54 +101,28 @@ const Order = () => {
         {/* Order Summary */}
         <div className={styles.orderSummaryContainer}>
         <div className={styles.orderSummary}>
-          <div className={styles.orderItem}>
-            <img src="src/assets/example.jpeg" alt="" />
+          {cart.map((item) => (
+            <div key={item._id} className={styles.orderItem}>
+            <img src={`${serverIp}/${item && item.coverImage}`} alt="" className={styles.image} width={"200px"} height={"200px"}  />
             <div className={styles.details}>
-              <p>Book: <span>48 Laws of Power</span></p>
-              <p>Author : <span>Robert Greene</span></p>
-              <p>Price: <span>KES 600</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
+              <p>Book: <span>{item.title}</span></p>
+              <p>Author : <span>{item.author}</span></p>
+              <p>Price: <span>KES {item.price}</span></p>
+              <p>Rating: <span>{item.ratingsAverage}</span></p>
+              <p>Pages: <span>{item.pages}</span> </p>
             </div>
             <p className={styles.quantity}>
             <p className={styles.remove}>❌</p>
-              <span className={styles.qty}>Qty [1]</span> <span className={styles.price}>KES 600</span>
+              <span className={styles.qty}>Qty [1]</span> <span className={styles.price}>KES {item.price}</span>
             </p>
           </div>
-          <div className={styles.orderItem}>
-            <img src="src/assets/example.jpeg" alt="" />
-            <div className={styles.details}>
-              <p>Book: <span>48 Laws of Power</span></p>
-              <p>Author : <span>Robert Greene</span></p>
-              <p>Price: <span>KES 600</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
-            </div>
-            <p className={styles.quantity}>
-            <p className={styles.remove}>❌</p>
-              <span className={styles.qty}>Qty [1]</span> <span className={styles.price}>KES 600</span>
-            </p>
-          </div>
-          <div className={styles.orderItem}>
-            <img src="src/assets/example.jpeg" alt="" />
-            <div className={styles.details}>
-              <p>Book: <span>48 Laws of Power</span></p>
-              <p>Author : <span>Robert Greene</span></p>
-              <p>Price: <span>KES 600</span></p>
-              <p>Rating: <span>4.5</span></p>
-              <p>Pages: <span>400</span> </p>
-            </div>
-            <p className={styles.quantity}>
-            <p className={styles.remove}>❌</p>
-              <span className={styles.qty}>Qty [1]</span> <span className={styles.price}>KES 600</span>
-            </p>
-          </div>
+          ))}
         </div>
 
-        <p className={styles.subtotal} >Subtotal: <span>KES 1800</span></p>
-        <p className={styles.subtotal}>Shipping: <span>KES 100</span></p>
+        <p className={styles.subtotal} >Subtotal: <span>KES {getPrice()}</span></p>
+        <p className={styles.subtotal}>Shipping: <span>KES {Shipping}</span></p>
         <hr className={styles.line} />
-        <p className={styles.subtotal}>Total: <span>KES 1900</span></p>
+        <p className={styles.subtotal}>Total: <span>KES {subtotal + Shipping}</span></p>
         </div>
        <div className={styles.summary}>
        <div className={styles.payment}>
